@@ -29,9 +29,6 @@ public class Cart {
     @Column(name="created_date")
     private LocalDate createdDate;
 
-    @Column(name="ended_date")
-    private LocalDate endedDate;
-
     @Column(name="cart_type")
     private CartType cartType;
 
@@ -42,9 +39,6 @@ public class Cart {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    @Column(name = "total_price")
-    private BigDecimal price;
+    private int quantity;
 
-    @Column(name="payment_method")
-    private Payment payment;
 }

@@ -33,5 +33,12 @@ public class Order {
     @Column(name = "vip_discount")
     private boolean isVip;
 
+    @Column(name = "total_price")
+    private BigDecimal totalPrice;
+
+    private double discount;
+
+    @Column(name="payment_method")
+    private Payment payment;
 
 }

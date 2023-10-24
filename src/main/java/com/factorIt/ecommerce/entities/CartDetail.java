@@ -14,18 +14,20 @@ import javax.persistence.*;
 public class CartDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long cartDetailId;
 
     @ManyToOne
     private Cart cart;
+
+    @ManyToOne
+    @JoinColumn(name="order_id")
+    private Order order;
 
     @ManyToOne
     private Product product;
 
     @Column(name="unit_price")
     private double unitPrice;
-
-    private double discount;
 
     private int quantity;
 

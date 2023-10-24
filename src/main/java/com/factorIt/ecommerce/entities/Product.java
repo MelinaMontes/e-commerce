@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NonNull;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @Entity
@@ -21,4 +22,6 @@ public class Product {
     @NonNull
     private String description;
 
+    @NonNull
+    private BigDecimal unitPrice;
 }
