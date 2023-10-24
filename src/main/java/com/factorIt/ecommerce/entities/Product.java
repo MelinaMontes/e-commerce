@@ -1,12 +1,16 @@
 package com.factorIt.ecommerce.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="products")
 public class Product {
@@ -16,12 +20,9 @@ public class Product {
     @Column(name = "product_id")
     private Integer productId;
 
-    @NonNull
     private String name;
 
-    @NonNull
     private String description;
 
-    @NonNull
     private BigDecimal unitPrice;
 }

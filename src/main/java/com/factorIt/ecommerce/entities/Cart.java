@@ -1,13 +1,11 @@
 package com.factorIt.ecommerce.entities;
 
 import com.factorIt.ecommerce.enums.CartType;
-import com.factorIt.ecommerce.enums.Payment;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Data
@@ -36,7 +34,7 @@ public class Cart {
     private boolean isEnded;
 
     @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
+    @JoinColumn(name = "product_id")
     private Product product;
 
     private int quantity;
