@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -17,26 +18,32 @@ public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="cart_id")
+    @Column(name = "cart_id")
     private Integer cartId;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    @Column(name="created_date")
+    @Column(name = "created_date")
     private LocalDate createdDate;
 
-    @Column(name="cart_type")
+    @Column(name = "cart_type")
     private CartType cartType;
 
-    @Column(name="is_ended")
+    @Column(name = "is_ended")
     private boolean isEnded;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
-
+    @Column(name = "quantity")
     private int quantity;
 
+    @ManyToMany
+    @JoinTable(
+            name = "order_detail",
+            joinColumns = @JoinColumn(name = "cart_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private List<Product> products;
+
 }
+

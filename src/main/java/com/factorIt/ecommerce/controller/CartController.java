@@ -25,7 +25,7 @@ public class CartController {
     @PostMapping("ecommerce/newCart")
     public ResponseEntity<String> createNewCart(@RequestParam CartType cartType, @RequestBody NewCartDTO newCartDTO) {
 
-        User user = userService.findById(newCartDTO.getId());
+        User user = userService.findById(newCartDTO.getUserId());
         if (user == null) {
             return new ResponseEntity<>("User not found :(", HttpStatus.NOT_FOUND);
         }
