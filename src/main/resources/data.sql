@@ -37,10 +37,10 @@ ALTER TABLE "public"."products" OWNER TO "postgres";
 -- Records of products
 -- ----------------------------
 
-INSERT INTO "public"."products" ("product_id", "description", "name", "price", "unit_price") VALUES (1, 'Freidora multiuso', 'AirFrier', NULL, 3000.00);
-INSERT INTO "public"."products" ("product_id", "description", "name", "price", "unit_price") VALUES (2, 'Aspiradora robot 3000', 'Robotina', NULL, 5000.00);
-INSERT INTO "public"."products" ("product_id", "description", "name", "price", "unit_price") VALUES (3, 'Tv Fullcanal', 'Smart TV pro', NULL, 10000.00);
-INSERT INTO "public"."products" ("product_id", "description", "name", "price", "unit_price") VALUES (4, 'Super celular', 'Telefono inteligente', NULL, 8000.00);
+INSERT INTO "public"."products" ("product_id", "description", "name", "unit_price") VALUES (1, 'Freidora multiuso', 'AirFrier', 3000.00);
+INSERT INTO "public"."products" ("product_id", "description", "name", "unit_price") VALUES (2, 'Aspiradora robot 3000', 'Robotina',5000.00);
+INSERT INTO "public"."products" ("product_id", "description", "name", "unit_price") VALUES (3, 'Tv Fullcanal', 'Smart TV pro', 10000.00);
+INSERT INTO "public"."products" ("product_id", "description", "name", "unit_price") VALUES (4, 'Super celular', 'Telefono inteligente',8000.00);
 
 -- ----------------------------
 -- Primary Key structure for table products

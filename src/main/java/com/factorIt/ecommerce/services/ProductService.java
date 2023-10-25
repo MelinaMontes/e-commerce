@@ -1,8 +1,13 @@
 package com.factorIt.ecommerce.services;
 
+import java.util.List;
+
 import com.factorIt.ecommerce.entities.Product;
 
 public interface ProductService {
 
-  public  Product findProductById(int productId);
+  Product findProductById(int productId);
+
+  List<Product> listProducts();
+
 }

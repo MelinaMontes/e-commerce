@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -17,6 +19,9 @@ public class OrderDetail {
     @Column(name = "order_detail_id")
     private int orderDetailId;
 
+    @Column(name = "created_date")
+    private LocalDate createdDate;
+
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
@@ -26,7 +31,7 @@ public class OrderDetail {
     private Product product;
 
     @Column(name = "unit_price")
-    private double unitPrice;
+    private BigDecimal unitPrice;
 
     private int quantity;
 

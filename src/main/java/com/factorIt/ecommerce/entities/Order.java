@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -36,9 +37,11 @@ public class Order {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    private double discount;
-
     @Column(name="payment_method")
     private Payment payment;
+
+    @OneToMany(mappedBy = "order",fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<OrderDetail> orderDetail;
 
 }

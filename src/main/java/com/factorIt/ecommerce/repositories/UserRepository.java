@@ -1,7 +1,6 @@
 package com.factorIt.ecommerce.repositories;
 
 import com.factorIt.ecommerce.entities.User;
-import lombok.NonNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

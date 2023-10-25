@@ -1,13 +1,11 @@
 package com.factorIt.ecommerce.entities;
 
-import com.factorIt.ecommerce.enums.CartType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.List;
+import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
@@ -26,24 +24,25 @@ public class Cart {
     private User user;
 
     @Column(name = "created_date")
-    private LocalDate createdDate;
+    private LocalDateTime createdDate;
 
-    @Column(name = "cart_type")
-    private CartType cartType;
+    @Column(name="is_special")
+    private boolean isSpecial;
+
+    @Column(name="is_vip")
+    private boolean isVip;
+
+    @Column(name="is_common")
+    private boolean isCommon;
 
     @Column(name = "is_ended")
     private boolean isEnded;
 
-    @Column(name = "quantity")
     private int quantity;
 
-    @ManyToMany
-    @JoinTable(
-            name = "order_detail",
-            joinColumns = @JoinColumn(name = "cart_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id")
-    )
-    private List<Product> products;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
 }
 
