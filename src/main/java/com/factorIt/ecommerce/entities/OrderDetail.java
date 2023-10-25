@@ -10,23 +10,22 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "cart_detail")
-public class CartDetail {
+@Table(name = "order_detail")
+public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long cartDetailId;
+    @Column(name = "order_detail_id")
+    private int orderDetailId;
 
     @ManyToOne
-    private Cart cart;
-
-    @ManyToOne
-    @JoinColumn(name="order_id")
+    @JoinColumn(name = "order_id")
     private Order order;
 
     @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
 
-    @Column(name="unit_price")
+    @Column(name = "unit_price")
     private double unitPrice;
 
     private int quantity;

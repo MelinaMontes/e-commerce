@@ -3,10 +3,10 @@ package com.factorIt.ecommerce.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -25,4 +25,8 @@ public class Product {
     private String description;
 
     private BigDecimal unitPrice;
+
+    @ManyToMany(mappedBy = "products")
+    private List<Cart> carts;
+
 }
